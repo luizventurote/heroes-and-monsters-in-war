@@ -1,0 +1,6 @@
+1 Ravier 18 60
+3 Zumbuu 70 30
+2 Beny 30 40
+4 Dufersmity 50 70
+5 Coringa 33 70
+1 Jack 33 80
