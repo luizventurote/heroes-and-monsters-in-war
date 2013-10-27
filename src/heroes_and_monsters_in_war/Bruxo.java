@@ -2,11 +2,9 @@ package heroes_and_monsters_in_war;
 
 import java.util.ArrayList;
 
-public class Ogro extends Monstro {
-    
-    private int clava = 0;
+public class Bruxo extends Monstro {
 
-    public Ogro(String name, int idade, double peso) {
+    public Bruxo(String name, int idade, double peso) {
 
         // Adiciona o nome no ser
         this.setNome(name);
@@ -31,35 +29,27 @@ public class Ogro extends Monstro {
 
             // Verifica se é um humano
             case "Humano":
-                heroi.retirarEnergia(60);
+                heroi.retirarEnergia(30);
                 break;
 
             // Verifica se é um guerreiro:
             case "Guerreiro":
-                if(this.clava == 0) {
-                    heroi.retirarEnergia(20);
-                } else {
-                    heroi.retirarEnergia(40);
-                }
+                heroi.retirarEnergia(30);
                 break;
 
             // Verifica se é um anão
             case "Anao":
-                if(this.clava == 0) {
-                    heroi.retirarEnergia(50);
-                } else {
-                   heroi.retirarEnergia(90); 
-                }
+                heroi.retirarEnergia(30);
                 break;
 
             // Verifica se é um elfo
             case "Elfo":
-                heroi.retirarEnergia(3);
+                heroi.retirarEnergia(10);
                 break;
 
             // Verifica se é um mago:
             case "Mago":
-                heroi.retirarEnergia(0);
+                heroi.retirarEnergia(30);
                 break;
 
             default:
@@ -67,32 +57,27 @@ public class Ogro extends Monstro {
         } // end switch
 
     } // atacarSer()
-    
 
+    
     @Override
     public void matouSer(ArrayList<Monstro> lista, Heroi heroi) {
 
         if (heroi.getEnergia() <= 0) {
             
             Monstro monstro = null;
-            
+
             switch (heroi.getClass().getSimpleName()) {
-                
-                case "Anao":
-                    this.clava = 1;
-                    break;
-                    
+
                 case "Elfo":
-                    this.clava = 1;
-                    break;
-                    
-                case "Mago":
                     monstro = new Elfo_Negro(heroi.getNome(), heroi.getIdade(), heroi.getPeso());
                     lista.add(monstro);
                     break;
                     
-                default:
-                
+                case "Mago":                    
+                    monstro = new Elfo_Negro(heroi.getNome(), heroi.getIdade(), heroi.getPeso());
+                    lista.add(monstro);
+                    break;
+
             } // end switch
 
         } // end if

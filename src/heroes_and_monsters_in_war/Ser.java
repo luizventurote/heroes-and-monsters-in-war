@@ -1,49 +1,71 @@
 package heroes_and_monsters_in_war;
 
-/**
- *
- * @author Luiz
- */
+public abstract class Ser {
 
-public class Ser {
-    
-    private String Nome;
-    private int Idade;
-    private int Peso;
-    private int Energia;
+    private String nome;
+    private int idade;
+    private double peso;
+    private int energia;
+    private int level;
 
+    // Getters and Setters
     public String getNome() {
-        return Nome;
+        return nome;
     }
 
     public void setNome(String Nome) {
-        this.Nome = Nome;
+        this.nome = Nome;
     }
 
     public int getIdade() {
-        return Idade;
+        return idade;
     }
 
     public void setIdade(int Idade) {
-        this.Idade = Idade;
+        this.idade = Idade;
     }
 
-    public int getPeso() {
-        return Peso;
+    public double getPeso() {
+        return peso;
     }
 
-    public void setPeso(int Peso) {
-        this.Peso = Peso;
+    public void setPeso(double Peso) {
+        this.peso = Peso;
     }
 
     public int getEnergia() {
-        return Energia;
+        return energia;
     }
 
     public void setEnergia(int Energia) {
-        this.Energia = Energia;
+        this.energia = Energia;
     }
- 
-    
-    
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    // Ataca outro ser
+    public void atacarSer() {
+    } //atacarSer()
+
+   
+    // Retira pontos de energia do ser
+    public void retirarEnergia(int qtd) {
+        this.energia = this.energia - qtd;
+    } // retirarEnergia()
+
+    // Exibe informações de cada ser
+    public void exibirInfo(int tipo) {
+        if (tipo == 1) {
+            System.out.println(this.getEnergia() + " - " + this.getNome() + " - " + this.getClass().getSimpleName());
+        } else {
+            System.out.println(this.getClass().getSimpleName() + " => " + this.getNome() + ", " + this.getIdade() + ", " + this.getPeso());
+        }
+        
+    } // exibirInfo()
 }

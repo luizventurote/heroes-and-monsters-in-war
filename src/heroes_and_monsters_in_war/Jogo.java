@@ -1,35 +1,36 @@
 package heroes_and_monsters_in_war;
 
-/**
- *
- * @author Luiz Alberto Binda Venturote - M19
- */
 public class Jogo {
 
     public static void main(String[] args) {
 
-        // Cria o objeto com os monstros
-        Registro monstros = new Registro("monstros.txt");
-
-        // Exibe o endereço do arquivo txt
-        monstros.exibirEnderecoRegistro();
-
-        // Faz a leitura dos seres
-        monstros.exibirSeres();
-        System.out.println("\n\n");
-        
-        // Cria os monstros
-        monstros.CriarMonstros();
+        // Arquivos txt
+        String arquivo_monstros = "monstros.txt";
+        String arquivo_herois = "herois.txt";
+       
+       
+        System.out.println("\nMonstros ----------------------------------- //");
+        // Inicia lista de monstros
+        LeitoraMonstros monstros = new LeitoraMonstros(arquivo_monstros);
+        monstros.criarLista();
+        monstros.exibirLista();
         
         
-//        // Cria o objeto com os heróis
-//        Registro herois = new Registro("herois.txt");
-//
-//        // Exibe o endereço do arquivo txt
-//        herois.exibirEnderecoRegistro();
-//
-//        // Faz a leitura dos heróis
-//        herois.lerRegistros();
+        System.out.println("\nHeróis ------------------------------------- //");
+        // Inicia lista de heróis
+        LeitoraHerois herois = new LeitoraHerois(arquivo_herois);
+        herois.criarLista();
+        herois.exibirLista();
+        
+        
+        System.out.println("\nBatalha ------------------------------------ //");
+        // Inicia a batalha
+        Batalha batalha = new Batalha(herois, monstros);
+        batalha.iniciarBatalha();
+        
+        
+        System.out.println("Resultado da Batalha ----------------------- //");
+        batalha.exibirResultados();
 
     }
 }
