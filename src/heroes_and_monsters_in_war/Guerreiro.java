@@ -3,25 +3,13 @@ package heroes_and_monsters_in_war;
 import java.util.ArrayList;
 
 public class Guerreiro extends Heroi {
-    
+
     private int veridiana = 0;
-    
-    public Guerreiro(String name, int idade, double peso) {
-        
-        // Adiciona o nome no ser
-        this.setNome(name);
-        
-        // Adiciona a idade no ser
-        this.setIdade(idade);
-        
-        // Adiciona o peso no ser
-        this.setPeso(peso);
-        
-        // Adiciona a energia no ser
-        this.setEnergia(100);
-        
+
+    public Guerreiro(String nome, int idade, double peso) {
+        super(nome, idade, peso);
     }
-    
+
     @Override
     public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
 
@@ -50,10 +38,11 @@ public class Guerreiro extends Heroi {
 
             // Verifica se é um bruxo:
             case "Bruxo":
-                if(this.veridiana == 0)
+                if (this.veridiana == 0) {
                     monstro.retirarEnergia(1);
-                else
+                } else {
                     monstro.retirarEnergia(100);
+                }
                 break;
 
             default:
@@ -61,29 +50,27 @@ public class Guerreiro extends Heroi {
         } // end switch
 
     } // atacarSer()
-    
-    
+
     @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
 
         if (monstro.getEnergia() <= 0) {
-            
+
             switch (monstro.getClass().getSimpleName()) {
-                
+
                 case "Bolha":
                     this.veridiana = 1;
                     break;
-                    
+
                 case "Elfo_Negro":
                     this.veridiana = 1;
                     break;
-                    
+
                 default:
-                
+
             } // end switch
 
         } // end if
 
     } // matouSer()
-    
 }

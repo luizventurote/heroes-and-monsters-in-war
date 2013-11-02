@@ -6,7 +6,13 @@ public abstract class Ser {
     private int idade;
     private double peso;
     private int energia;
-    private int level;
+
+    public Ser(String nome, int idade, double peso) {
+        this.nome = nome;
+        this.idade = idade;
+        this.peso = peso;
+        this.energia = 100;
+    }
 
     // Getters and Setters
     public String getNome() {
@@ -41,19 +47,6 @@ public abstract class Ser {
         this.energia = Energia;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    // Ataca outro ser
-    public void atacarSer() {
-    } //atacarSer()
-
-   
     // Retira pontos de energia do ser
     public void retirarEnergia(int qtd) {
         this.energia = this.energia - qtd;
@@ -66,6 +59,6 @@ public abstract class Ser {
         } else {
             System.out.println(this.getClass().getSimpleName() + " => " + this.getNome() + ", " + this.getIdade() + ", " + this.getPeso());
         }
-        
+
     } // exibirInfo()
 }

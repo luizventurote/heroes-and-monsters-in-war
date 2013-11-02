@@ -4,18 +4,12 @@ import java.util.ArrayList;
 
 public class Bolha extends Monstro {
 
+    private int level;
     private static int b1, b2, b4, b8, b16, b32, b64;
 
-    public Bolha(String name, int idade, double peso, int level) {
+    public Bolha(String nome, int idade, double peso, int level) {
 
-        // Adiciona o nome no ser
-        this.setNome(name);
-
-        // Adiciona a idade no ser
-        this.setIdade(idade);
-
-        // Adiciona o peso no ser
-        this.setPeso(peso);
+        super(nome, idade, peso);
 
         // Adiciona a energia no ser        
         this.setEnergia(100 / level);
@@ -60,6 +54,13 @@ public class Bolha extends Monstro {
 
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     // Exibe a quantidade de bolhas que foram criadas
     public static void qtdBolhas() {
@@ -72,45 +73,45 @@ public class Bolha extends Monstro {
         System.out.println(b64);
     } // qtdBolhas()
 
-    
     @Override
-    public void atacarSer(Heroi heroi) {
+    public void atacarSer(Ser ser) {
 
         // Verifica o tipo de monstro para atacar
-        switch (heroi.getClass().getSimpleName()) {
+        switch (ser.getClass().getSimpleName()) {
 
             // Verifica se é um humano
             case "Humano":
-                heroi.retirarEnergia(1);
+                ser.retirarEnergia(1);
                 break;
 
             // Verifica se é um guerreiro:
             case "Guerreiro":
-                heroi.retirarEnergia(1);
+                ser.retirarEnergia(1);
                 break;
 
             // Verifica se é um anão
             case "Anao":
-                heroi.retirarEnergia(1);
+                ser.retirarEnergia(1);
                 break;
 
             // Verifica se é um elfo
             case "Elfo":
-                heroi.retirarEnergia(10);
+                ser.retirarEnergia(10);
                 break;
 
             // Verifica se é um mago:
             case "Mago":
-                heroi.retirarEnergia(1);
+                ser.retirarEnergia(1);
                 break;
 
             default:
+                ser.retirarEnergia(1);
+                break;
 
         } // end switch
 
     } // atacarSer()
 
-    
     @Override
     public void matouSer(ArrayList<Monstro> lista, Heroi heroi) {
 

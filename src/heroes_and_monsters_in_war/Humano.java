@@ -4,26 +4,18 @@ import java.util.ArrayList;
 
 public class Humano extends Heroi {
 
-    public Humano(String name, int idade, double peso) {
-
-        // Adiciona o nome no ser
-        this.setNome(name);
-
-        // Adiciona a idade no ser
-        this.setIdade(idade);
-
-        // Adiciona o peso no ser
-        this.setPeso(peso);
-
-        // Adiciona a energia no ser
-        this.setEnergia(100);
-
+    public Humano(String nome, int idade, double peso) {
+        super(nome, idade, peso);
     }
 
     @Override
     public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
-        
+
         monstro.retirarEnergia(10);
 
-    } // atacarSer(0
+    } // atacarSer()
+
+    @Override
+    public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
+    } // matouSer()
 }

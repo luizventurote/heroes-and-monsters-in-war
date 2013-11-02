@@ -5,7 +5,6 @@ public class Batalha {
     // Listas
     LeitoraHerois herois;
     LeitoraMonstros monstros;
-    
     // Últimos lutadores
     Heroi ultimo_heroi = null;
     Monstro ultimo_monstro = null;
@@ -19,13 +18,21 @@ public class Batalha {
     public void iniciarBatalha() {
 
         while ((herois.getListaHerois().size() > 0) && (monstros.getListaMonstros().size() > 0)) {
-            
-            // Herói ataca
-            herois.getListaHerois().get(0).atacarSer(herois.getListaHerois(), monstros.getListaMonstros().get(0));
 
-            // Monstro ataca
-            monstros.getListaMonstros().get(0).atacarSer(herois.getListaHerois().get(0));
-            
+            // Verifica quem ataca primeiro
+            int randomNum = (int) (Math.random() * 2);
+            if (randomNum == 0) {
+                // Herói ataca
+                herois.getListaHerois().get(0).atacarSer(herois.getListaHerois(), monstros.getListaMonstros().get(0));
+                // Monstro ataca
+                monstros.getListaMonstros().get(0).atacarSer(herois.getListaHerois().get(0));
+            } else {
+                // Monstro ataca
+                monstros.getListaMonstros().get(0).atacarSer(herois.getListaHerois().get(0));
+                // Herói ataca
+                herois.getListaHerois().get(0).atacarSer(herois.getListaHerois(), monstros.getListaMonstros().get(0));
+            }
+
             // Informações da batalha
             ultimo_heroi = herois.getListaHerois().get(0);
             ultimo_monstro = monstros.getListaMonstros().get(0);
@@ -58,29 +65,28 @@ public class Batalha {
             System.out.println();
 
         } // end while
-        
+
     } // end iniciarBatalha()
-    
-    
+
     // Exibi resultado final da batalha
     public void exibirResultados() {
-        
-        if(!(herois.getListaHerois().isEmpty())) {
-            
+
+        if (!(herois.getListaHerois().isEmpty())) {
+
             System.out.println("A categoria vencedora foi: Heróis");
             System.out.println("\nO último membro da categoria perdedora foi:");
             ultimo_monstro.exibirInfo(2);
             System.out.println("\nO membro da categoria vencedora que transferiu \no último ataque foi:");
             ultimo_heroi.exibirInfo(2);
-            
+
         } else {
-            
+
             System.out.println("A categoria vencedora foi: Monstros");
             System.out.println("\nO último membro da categoria perdedora foi:");
             ultimo_heroi.exibirInfo(2);
             System.out.println("\nO membro da categoria vencedora que transferiu \no último ataque foi:");
             ultimo_monstro.exibirInfo(2);
         }
-        
+
     } // exibirResultados()
 }

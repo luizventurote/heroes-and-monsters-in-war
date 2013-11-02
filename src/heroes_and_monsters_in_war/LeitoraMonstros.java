@@ -6,26 +6,21 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
 public class LeitoraMonstros {
 
     // Arquivo txt
     private String arquivo;
-    
     // array list
     ArrayList<Monstro> listaMonstros = new ArrayList();
-
 
     public LeitoraMonstros(String arquivo) {
         this.arquivo = arquivo;
     }
 
-    
     public ArrayList<Monstro> getListaMonstros() {
         return listaMonstros;
     }
 
-    
     // Cria a lista de monstros
     public ArrayList criarLista() {
 
@@ -50,7 +45,7 @@ public class LeitoraMonstros {
                     case 1:
                         monstro = new Zumbi(scan.next(), scan.nextInt(), scan.nextDouble());
                         break;
-                        
+
                     case 2:
                         monstro = new Ogro(scan.next(), scan.nextInt(), scan.nextDouble());
                         break;
@@ -66,7 +61,7 @@ public class LeitoraMonstros {
                     case 5:
                         monstro = new Bruxo(scan.next(), scan.nextInt(), scan.nextDouble());
                         break;
-                        
+
                 } // end switch
 
                 listaMonstros.add(monstro);
@@ -81,7 +76,6 @@ public class LeitoraMonstros {
 
     } // criarLista()
 
-    
     // Exibibe os monstros que estão na lista
     public void exibirLista() {
 
@@ -91,7 +85,6 @@ public class LeitoraMonstros {
 
     } // exibirLista()
 
-    
     // Verifica se algum monstro morreu
     public int verificarMorte() {
 
@@ -109,7 +102,6 @@ public class LeitoraMonstros {
 
     } // verificarMorte()
 
-    
     // Remove os mortos da lista
     public void removerMortos() {
 
@@ -121,46 +113,48 @@ public class LeitoraMonstros {
 
                 if ("Bolha".equals(listaMonstros.get(i).getClass().getSimpleName())) {
 
-                    switch (listaMonstros.get(i).getLevel()) {
+                    Bolha monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 1);
+
+                    switch (monstro.getLevel()) {
 
                         case 1:
                             for (j = 0; j < 2; j++) {
-                                Monstro monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 2);
+                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 2);
                                 listaMonstros.add(monstro);
                             }
                             break;
 
                         case 2:
                             for (j = 0; j < 2; j++) {
-                                Monstro monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 4);
+                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 4);
                                 listaMonstros.add(monstro);
                             }
                             break;
 
                         case 4:
                             for (j = 0; j < 2; j++) {
-                                Monstro monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 8);
+                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 8);
                                 listaMonstros.add(monstro);
                             }
                             break;
 
                         case 8:
                             for (j = 0; j < 2; j++) {
-                                Monstro monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 16);
+                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 16);
                                 listaMonstros.add(monstro);
                             }
                             break;
 
                         case 16:
                             for (j = 0; j < 2; j++) {
-                                Monstro monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 32);
+                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 32);
                                 listaMonstros.add(monstro);
                             }
                             break;
 
                         case 32:
                             for (j = 0; j < 2; j++) {
-                                Monstro monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 64);
+                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 64);
                                 listaMonstros.add(monstro);
                             }
                             break;
@@ -183,7 +177,6 @@ public class LeitoraMonstros {
 
     } // removerMortos()
 
-    
     public void nextElement() {
 
         if ((!(listaMonstros.isEmpty())) && (listaMonstros.size() > 1)) {

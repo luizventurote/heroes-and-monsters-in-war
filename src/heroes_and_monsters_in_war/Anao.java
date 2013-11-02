@@ -6,22 +6,9 @@ public class Anao extends Heroi {
 
     private int machado = 0;
 
-    public Anao(String name, int idade, double peso) {
-
-        // Adiciona o nome no ser
-        this.setNome(name);
-
-        // Adiciona a idade no ser
-        this.setIdade(idade);
-
-        // Adiciona o peso no ser
-        this.setPeso(peso);
-
-        // Adiciona a energia no ser
-        this.setEnergia(100);
-
+    public Anao(String nome, int idade, double peso) {
+        super(nome, idade, peso);
     }
-    
 
     @Override
     public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
@@ -46,11 +33,12 @@ public class Anao extends Heroi {
 
             // Verifica se é um elfo negro
             case "Elfo_Negro":
-                if (machado == 0)
+                if (machado == 0) {
                     monstro.retirarEnergia(25);
-                else
+                } else {
                     monstro.retirarEnergia(100);
-                
+                }
+
                 break;
 
             // Verifica se é um bruxo:
@@ -64,7 +52,6 @@ public class Anao extends Heroi {
 
     } // atacarSer()
 
-    
     @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
 

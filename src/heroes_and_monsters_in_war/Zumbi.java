@@ -4,30 +4,16 @@ import java.util.ArrayList;
 
 public class Zumbi extends Monstro {
 
-    public Zumbi(String name, int idade, double peso) {
-
-        // Adiciona o nome no ser
-        this.setNome(name);
-
-        // Adiciona a idade no ser
-        this.setIdade(idade);
-
-        // Adiciona o peso no ser
-        this.setPeso(peso);
-
-        // Adiciona a energia no ser
-        this.setEnergia(100);
-
+    public Zumbi(String nome, int idade, double peso) {
+        super(nome, idade, peso);
     }
 
-    
     @Override
-    public void atacarSer(Heroi heroi) {
+    public void atacarSer(Ser ser) {
 
-        heroi.retirarEnergia(1);
+        ser.retirarEnergia(1);
 
     } // atacarSer()
-    
 
     @Override
     public void matouSer(ArrayList<Monstro> lista, Heroi heroi) {

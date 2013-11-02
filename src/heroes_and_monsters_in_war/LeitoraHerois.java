@@ -6,26 +6,21 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-
 public class LeitoraHerois {
 
     // Arquivo txt
     private String arquivo;
-    
     // array lists
     ArrayList<Heroi> listaHerois = new ArrayList();
 
-    
     public LeitoraHerois(String arquivo) {
         this.arquivo = arquivo;
     }
 
-    
     public ArrayList<Heroi> getListaHerois() {
         return listaHerois;
     }
 
-    
     // Cria a lista de heróis
     public ArrayList criarLista() {
 
@@ -80,7 +75,6 @@ public class LeitoraHerois {
 
     } // criarLista()
 
-    
     // Exibibe os monstros que estão na lista
     public void exibirLista() {
 
@@ -89,39 +83,38 @@ public class LeitoraHerois {
         }
 
     } // exibirLista()
-    
-    
+
     // Verifica se algum ser da lista morreu
     public int verificarMorte() {
-        
+
         for (int i = 0; i < listaHerois.size(); i++) {
-            
-            if(listaHerois.get(i).getEnergia() <= 0)
+
+            if (listaHerois.get(i).getEnergia() <= 0) {
                 return 1;
-            
+            }
+
         } // end for
-        
+
         return 0;
-        
+
     } // verificarMorte()
-    
-    
+
     // Remove os mortos da lista
     public void removerMortos() {
-        
+
         for (int i = 0; i < listaHerois.size(); i++) {
-            
-            if(listaHerois.get(i).getEnergia() <= 0)
+
+            if (listaHerois.get(i).getEnergia() <= 0) {
                 listaHerois.remove(i);
-            
+            }
+
         }
-        
+
     } // removerMortos()
 
-    
     public void nextElement() {
 
-        if ( (!(listaHerois.isEmpty())) && (listaHerois.size() > 1) ) {
+        if ((!(listaHerois.isEmpty())) && (listaHerois.size() > 1)) {
 
             listaHerois.add(listaHerois.get(0));
             listaHerois.remove(0);
