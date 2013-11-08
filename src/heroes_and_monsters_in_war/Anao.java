@@ -10,40 +10,39 @@ public class Anao extends Heroi {
         super(nome, idade, peso);
     }
 
-    @Override
-    public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
+    public void atacarSer(Ser ser) {
 
         // Verifica o tipo de monstro para atacar
-        switch (monstro.getClass().getSimpleName()) {
+        switch (ser.getClass().getSimpleName()) {
 
             // Verifica se é um zumbi
             case "Zumbi":
-                monstro.retirarEnergia(10);
+                ser.retirarEnergia(10);
                 break;
 
             // Verifica se é um ogro:
             case "Ogro":
-                monstro.retirarEnergia(5);
+                ser.retirarEnergia(5);
                 break;
 
             // Verifica se é um bolha
             case "Bolha":
-                monstro.retirarEnergia(50);
+                ser.retirarEnergia(50);
                 break;
 
             // Verifica se é um elfo negro
             case "Elfo_Negro":
                 if (machado == 0) {
-                    monstro.retirarEnergia(25);
+                    ser.retirarEnergia(25);
                 } else {
-                    monstro.retirarEnergia(100);
+                    ser.retirarEnergia(100);
                 }
 
                 break;
 
             // Verifica se é um bruxo:
             case "Bruxo":
-                monstro.retirarEnergia(2);
+                ser.retirarEnergia(2);
                 break;
 
             default:
@@ -52,7 +51,7 @@ public class Anao extends Heroi {
 
     } // atacarSer()
 
-    @Override
+ 
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
 
         if (monstro.getEnergia() <= 0) {

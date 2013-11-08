@@ -8,14 +8,13 @@ public class Humano extends Heroi {
         super(nome, idade, peso);
     }
 
-    @Override
-    public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
+    public void atacarSer(Ser ser) {
 
-        monstro.retirarEnergia(10);
+        ser.retirarEnergia(10);
 
     } // atacarSer()
 
-    @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
     } // matouSer()
+    
 }

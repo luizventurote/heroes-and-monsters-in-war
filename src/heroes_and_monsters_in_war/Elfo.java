@@ -8,14 +8,16 @@ public class Elfo extends Heroi {
         super(nome, idade, peso);
     }
 
-    @Override
-    public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
+    public void atacarSer(Ser ser) {
 
         // Aumenta energia
         int nova_energia = this.getEnergia() + 5;
         this.setEnergia(nova_energia);
 
+    } // atacarSer()
 
+    public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
+        
         switch (monstro.getClass().getSimpleName()) {
 
             case "Elfo_Negro":
@@ -28,10 +30,6 @@ public class Elfo extends Heroi {
                 monstro.retirarEnergia(15);
 
         } // end switch
-
-    } // atacarSer()
-
-    @Override
-    public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
+        
     } // matouSer()
 }

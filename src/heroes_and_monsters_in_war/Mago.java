@@ -8,14 +8,13 @@ public class Mago extends Heroi {
         super(nome, idade, peso);
     }
 
-    @Override
-    public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
+    public void atacarSer(Ser ser) {
 
-        monstro.retirarEnergia(60);
+        ser.retirarEnergia(60);
 
     } // atacarSer()
 
-    @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
     } // matouSer()
+    
 }

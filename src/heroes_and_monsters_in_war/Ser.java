@@ -51,6 +51,9 @@ public abstract class Ser {
     public void retirarEnergia(int qtd) {
         this.energia = this.energia - qtd;
     } // retirarEnergia()
+    
+    // Atacar ser
+    public abstract void atacarSer(Ser ser); // atacarSer()
 
     // Exibe informações de cada ser
     public void exibirInfo(int tipo) {

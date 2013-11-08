@@ -8,7 +8,13 @@ public abstract class Heroi extends Ser {
         super(nome, idade, peso);
     }
 
-    public abstract void atacarSer(ArrayList<Heroi> lista, Monstro monstro);
-
     public abstract void matouSer(ArrayList<Heroi> lista, Monstro monstro);
+
+    @Override
+    public void atacarSer(Ser ser) {
+        
+    }
+    
+    
+    
 }

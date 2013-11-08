@@ -10,7 +10,9 @@ public class Elfo_Negro extends Monstro {
 
     @Override
     public void atacarSer(Ser ser) {
-
+        
+        super.atacarSer(ser);
+        
         // Verifica o tipo de monstro para atacar
         switch (ser.getClass().getSimpleName()) {
 

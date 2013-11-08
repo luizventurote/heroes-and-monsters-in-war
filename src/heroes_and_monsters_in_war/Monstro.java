@@ -8,7 +8,5 @@ public abstract class Monstro extends Ser {
         super(nome, idade, peso);
     }
 
-    public abstract void atacarSer(Ser ser);
-
     public abstract void matouSer(ArrayList<Monstro> lista, Heroi heroi);
 }

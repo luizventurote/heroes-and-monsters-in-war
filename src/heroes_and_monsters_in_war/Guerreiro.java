@@ -11,37 +11,37 @@ public class Guerreiro extends Heroi {
     }
 
     @Override
-    public void atacarSer(ArrayList<Heroi> lista, Monstro monstro) {
+    public void atacarSer(Ser ser) {
 
         // Verifica o tipo de monstro para atacar
-        switch (monstro.getClass().getSimpleName()) {
+        switch (ser.getClass().getSimpleName()) {
 
             // Verifica se é um zumbi
             case "Zumbi":
-                monstro.retirarEnergia(90);
+                ser.retirarEnergia(90);
                 break;
 
             // Verifica se é um ogro:
             case "Ogro":
-                monstro.retirarEnergia(30);
+                ser.retirarEnergia(30);
                 break;
 
             // Verifica se é um bolha
             case "Bolha":
-                monstro.retirarEnergia(60);
+                ser.retirarEnergia(60);
                 break;
 
             // Verifica se é um elfo negro
             case "Elfo_Negro":
-                monstro.retirarEnergia(2);
+                ser.retirarEnergia(2);
                 break;
 
             // Verifica se é um bruxo:
             case "Bruxo":
                 if (this.veridiana == 0) {
-                    monstro.retirarEnergia(1);
+                    ser.retirarEnergia(1);
                 } else {
-                    monstro.retirarEnergia(100);
+                    ser.retirarEnergia(100);
                 }
                 break;
 

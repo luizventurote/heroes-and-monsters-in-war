@@ -23,14 +23,14 @@ public class Batalha {
             int randomNum = (int) (Math.random() * 2);
             if (randomNum == 0) {
                 // Herói ataca
-                herois.getListaHerois().get(0).atacarSer(herois.getListaHerois(), monstros.getListaMonstros().get(0));
+                herois.getListaHerois().get(0).atacarSer(monstros.getListaMonstros().get(0));
                 // Monstro ataca
                 monstros.getListaMonstros().get(0).atacarSer(herois.getListaHerois().get(0));
             } else {
                 // Monstro ataca
                 monstros.getListaMonstros().get(0).atacarSer(herois.getListaHerois().get(0));
                 // Herói ataca
-                herois.getListaHerois().get(0).atacarSer(herois.getListaHerois(), monstros.getListaMonstros().get(0));
+                herois.getListaHerois().get(0).atacarSer(monstros.getListaMonstros().get(0));
             }
 
             // Informações da batalha
