@@ -10,7 +10,10 @@ public class Anao extends Heroi {
         super(nome, idade, peso);
     }
 
-    public void atacarSer(Ser ser) {
+    @Override
+    public void atacarSer(Ser ser) throws SerException {
+        
+        super.atacarSer(ser);
 
         // Verifica o tipo de monstro para atacar
         switch (ser.getClass().getSimpleName()) {
@@ -52,6 +55,7 @@ public class Anao extends Heroi {
     } // atacarSer()
 
  
+    @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
 
         if (monstro.getEnergia() <= 0) {

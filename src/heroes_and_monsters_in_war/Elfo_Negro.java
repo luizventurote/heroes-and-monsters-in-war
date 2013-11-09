@@ -9,7 +9,7 @@ public class Elfo_Negro extends Monstro {
     }
 
     @Override
-    public void atacarSer(Ser ser) {
+    public void atacarSer(Ser ser) throws SerException, AtacarException{
         
         super.atacarSer(ser);
         

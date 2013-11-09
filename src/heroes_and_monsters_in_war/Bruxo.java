@@ -9,7 +9,9 @@ public class Bruxo extends Monstro {
     }
 
     @Override
-    public void atacarSer(Ser ser) {
+    public void atacarSer(Ser ser) throws SerException, AtacarException{
+        
+        super.atacarSer(ser);
 
         // Verifica o tipo de monstro para atacar
         switch (ser.getClass().getSimpleName()) {

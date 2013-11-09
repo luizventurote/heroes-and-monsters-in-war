@@ -8,12 +8,16 @@ public class Mago extends Heroi {
         super(nome, idade, peso);
     }
 
-    public void atacarSer(Ser ser) {
+    @Override
+    public void atacarSer(Ser ser) throws SerException {
+        
+        super.atacarSer(ser);
 
         ser.retirarEnergia(60);
 
     } // atacarSer()
 
+    @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
     } // matouSer()
     

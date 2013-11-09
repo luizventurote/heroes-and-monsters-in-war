@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Bolha extends Monstro {
 
-    private int level;
     private static int b1, b2, b4, b8, b16, b32, b64;
 
     public Bolha(String nome, int idade, double peso, int level) {
@@ -54,13 +53,6 @@ public class Bolha extends Monstro {
 
     }
 
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
 
     // Exibe a quantidade de bolhas que foram criadas
     public static void qtdBolhas() {
@@ -74,7 +66,9 @@ public class Bolha extends Monstro {
     } // qtdBolhas()
 
     @Override
-    public void atacarSer(Ser ser) {
+    public void atacarSer(Ser ser) throws SerException, AtacarException {
+        
+        super.atacarSer(ser);
 
         // Verifica o tipo de monstro para atacar
         switch (ser.getClass().getSimpleName()) {
@@ -117,7 +111,7 @@ public class Bolha extends Monstro {
 
         if (heroi.getEnergia() <= 0) {
 
-            Monstro monstro = null;
+            Monstro monstro;
 
             switch (heroi.getClass().getSimpleName()) {
 

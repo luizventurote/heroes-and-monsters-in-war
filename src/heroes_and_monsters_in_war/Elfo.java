@@ -8,7 +8,10 @@ public class Elfo extends Heroi {
         super(nome, idade, peso);
     }
 
-    public void atacarSer(Ser ser) {
+    @Override
+    public void atacarSer(Ser ser) throws SerException {
+        
+        super.atacarSer(ser);
 
         // Aumenta energia
         int nova_energia = this.getEnergia() + 5;
@@ -16,6 +19,7 @@ public class Elfo extends Heroi {
 
     } // atacarSer()
 
+    @Override
     public void matouSer(ArrayList<Heroi> lista, Monstro monstro) {
         
         switch (monstro.getClass().getSimpleName()) {

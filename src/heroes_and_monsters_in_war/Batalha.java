@@ -15,12 +15,13 @@ public class Batalha {
     }
 
     // Inicia a Batalha
-    public void iniciarBatalha() {
+    public void iniciarBatalha() throws SerException, AtacarException {
 
         while ((herois.getListaHerois().size() > 0) && (monstros.getListaMonstros().size() > 0)) {
 
             // Verifica quem ataca primeiro
             int randomNum = (int) (Math.random() * 2);
+            
             if (randomNum == 0) {
                 // Herói ataca
                 herois.getListaHerois().get(0).atacarSer(monstros.getListaMonstros().get(0));
@@ -32,7 +33,7 @@ public class Batalha {
                 // Herói ataca
                 herois.getListaHerois().get(0).atacarSer(monstros.getListaMonstros().get(0));
             }
-
+          
             // Informações da batalha
             ultimo_heroi = herois.getListaHerois().get(0);
             ultimo_monstro = monstros.getListaMonstros().get(0);

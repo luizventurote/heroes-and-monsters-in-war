@@ -22,7 +22,7 @@ public class LeitoraMonstros {
     }
 
     // Cria a lista de monstros
-    public ArrayList criarLista() {
+    public void criarLista() {
 
         try {
 
@@ -72,8 +72,6 @@ public class LeitoraMonstros {
             System.out.println("Arquivo não encontrado!");
         } // End try
 
-        return listaMonstros;
-
     } // criarLista()
 
     // Exibibe os monstros que estão na lista
@@ -91,11 +89,8 @@ public class LeitoraMonstros {
         int j;
 
         for (int i = 0; i < listaMonstros.size(); i++) {
-
-            if (listaMonstros.get(i).getEnergia() <= 0) {
+            if (listaMonstros.get(i).getEnergia() <= 0)
                 return 1;
-            }
-
         } // end for
 
         return 0;
@@ -112,54 +107,53 @@ public class LeitoraMonstros {
             if (listaMonstros.get(i).getEnergia() <= 0) {
 
                 if ("Bolha".equals(listaMonstros.get(i).getClass().getSimpleName())) {
+                    Monstro bolha;
 
-                    Bolha monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 1);
-
-                    switch (monstro.getLevel()) {
+                    switch (listaMonstros.get(i).getLevel()) {
 
                         case 1:
                             for (j = 0; j < 2; j++) {
-                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 2);
-                                listaMonstros.add(monstro);
+                                bolha = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 2);
+                                listaMonstros.add(bolha);
                             }
                             break;
 
                         case 2:
                             for (j = 0; j < 2; j++) {
-                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 4);
-                                listaMonstros.add(monstro);
+                                bolha = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 4);
+                                listaMonstros.add(bolha);
                             }
                             break;
 
                         case 4:
                             for (j = 0; j < 2; j++) {
-                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 8);
-                                listaMonstros.add(monstro);
+                                bolha = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 8);
+                                listaMonstros.add(bolha);
                             }
                             break;
 
                         case 8:
                             for (j = 0; j < 2; j++) {
-                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 16);
-                                listaMonstros.add(monstro);
+                                bolha = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 16);
+                                listaMonstros.add(bolha);
                             }
                             break;
 
                         case 16:
                             for (j = 0; j < 2; j++) {
-                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 32);
-                                listaMonstros.add(monstro);
+                                bolha = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 32);
+                                listaMonstros.add(bolha);
                             }
                             break;
 
                         case 32:
                             for (j = 0; j < 2; j++) {
-                                monstro = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 64);
-                                listaMonstros.add(monstro);
+                                bolha = new Bolha(listaMonstros.get(i).getNome(), listaMonstros.get(i).getIdade(), listaMonstros.get(i).getPeso(), 64);
+                                listaMonstros.add(bolha);
                             }
                             break;
 
-                    } // end switch
+                   } // end switch
 
                     System.out.println("uma bolha morreu!");
 

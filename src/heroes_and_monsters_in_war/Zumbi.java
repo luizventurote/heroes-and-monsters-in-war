@@ -9,7 +9,9 @@ public class Zumbi extends Monstro {
     }
 
     @Override
-    public void atacarSer(Ser ser) {
+    public void atacarSer(Ser ser) throws SerException, AtacarException {
+        
+        super.atacarSer(ser);
 
         ser.retirarEnergia(1);
 
@@ -20,7 +22,7 @@ public class Zumbi extends Monstro {
 
         if (heroi.getEnergia() <= 0) {
 
-            Monstro monstro = null;
+            Monstro monstro;
 
             switch (heroi.getClass().getSimpleName()) {
 

@@ -6,6 +6,7 @@ public abstract class Ser {
     private int idade;
     private double peso;
     private int energia;
+    private int level;
 
     public Ser(String nome, int idade, double peso) {
         this.nome = nome;
@@ -46,6 +47,14 @@ public abstract class Ser {
     public void setEnergia(int Energia) {
         this.energia = Energia;
     }
+    
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
 
     // Retira pontos de energia do ser
     public void retirarEnergia(int qtd) {
@@ -53,7 +62,7 @@ public abstract class Ser {
     } // retirarEnergia()
     
     // Atacar ser
-    public abstract void atacarSer(Ser ser); // atacarSer()
+    public abstract void atacarSer(Ser ser) throws SerException, AtacarException; // atacarSer()
 
     // Exibe informações de cada ser
     public void exibirInfo(int tipo) {

@@ -9,4 +9,18 @@ public abstract class Monstro extends Ser {
     }
 
     public abstract void matouSer(ArrayList<Monstro> lista, Heroi heroi);
+    
+    @Override
+    public void atacarSer(Ser ser) throws SerException, AtacarException {
+        
+        if(!((ser instanceof Monstro) || (ser instanceof Heroi))) {
+            throw new SerException(this, ser);
+        }  
+        
+        if(!(ser instanceof Heroi)) {
+            throw new AtacarException();
+        }
+        
+    } // atacarSer()
+    
 }

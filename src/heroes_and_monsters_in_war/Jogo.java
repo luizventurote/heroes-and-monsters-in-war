@@ -26,11 +26,24 @@ public class Jogo {
         System.out.println("\nBatalha ------------------------------------ //");
         // Inicia a batalha
         Batalha batalha = new Batalha(herois, monstros);
-        batalha.iniciarBatalha();
 
-
-        System.out.println("Resultado da Batalha ----------------------- //");
-        batalha.exibirResultados();
-
+        try {
+            
+            batalha.iniciarBatalha();
+            
+            
+            System.out.println("Resultado da Batalha ----------------------- //");
+            batalha.exibirResultados();
+            
+        } catch (SerException erro) {
+            
+            System.out.println(erro.getMessage());
+            
+        } catch (AtacarException erro) {
+            
+            System.out.println(erro.getMessage());
+            
+        } // end try
+        
     }
 }
